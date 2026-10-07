@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-serif), "Playfair Display", Georgia, serif;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    --veloura-blush: #FAF4F2;
+    --veloura-blush-subtle: #FDF9F8;
+    --veloura-rose: #C97A7E;
+    --veloura-rose-deep: #A85A62;
+    --veloura-rose-light: #F2DCDD;
+    --veloura-plum: #2D1427;
+    --veloura-plum-deep: #1F0D1B;
+    --veloura-plum-light: #44223C;
+    --veloura-gold: #C5A059;
+    --veloura-gold-light: #F4E8D0;
+    --veloura-gold-dark: #A07E36;
+    --veloura-sand: #F3ECE8;
+    --veloura-dark: #140812;
+    --veloura-border: rgba(201, 122, 126, 0.2);
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+    font-family: var(--font-sans);
+    line-height: 1.75;
+    letter-spacing: 0.015em;
+    color: #1F0D1B;
+  }
+
+  p {
+    line-height: 1.82;
+    letter-spacing: 0.015em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.26;
+    letter-spacing: 0.01em;
+  }
+
+  .font-serif {
+    letter-spacing: 0.012em;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+}
+
+/* Custom styling for luxury scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF4F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9A5A8;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C97A7E;
+}
+
+/* Glassmorphism utilities */
+.glass-nav {
+  background: rgba(253, 249, 248, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 122, 126, 0.18);
+}
+
+.glass-plum {
+  background: rgba(45, 20, 39, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+/* Text glow and shimmer */
+.text-shimmer {
+  background: linear-gradient(135deg, #1F0D1B 0%, #A85A62 50%, #C5A059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C5A059 0%, #E6CFA0 50%, #A07E36 100%);
+}
+
+.plum-gradient-bg {
+  background: linear-gradient(135deg, #2D1427 0%, #1F0D1B 100%);
+}
+
+.rose-gradient-bg {
+  background: linear-gradient(135deg, #FAF4F2 0%, #F5E5E3 100%);
+}
+
+/* Smooth image scale */
+.group:hover .product-image-hover {
+  transform: scale(1.05);
+}
+
+/* Hide scrollbars while allowing smooth scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mobile safe area padding utility */
+.safe-area-pb {
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* Haute Couture Luxury Utilities */
+.gold-foil-text {
+  background: linear-gradient(135deg, #ECC87E 0%, #C5A059 40%, #E7D19B 70%, #9B7629 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-foil-border {
+  border: 1px solid rgba(197, 160, 89, 0.35);
+}
+
+.gold-foil-border-subtle {
+  border: 1px solid rgba(197, 160, 89, 0.18);
+}
+
+.gold-foil-glow {
+  box-shadow: 0 0 25px -4px rgba(197, 160, 89, 0.22);
+}
+
+.luxury-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(201, 122, 126, 0.16);
+  box-shadow: 0 10px 30px -10px rgba(45, 20, 39, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  border-color: rgba(197, 160, 89, 0.45);
+  box-shadow: 0 20px 45px -12px rgba(45, 20, 39, 0.12);
+  transform: translateY(-2px);
+}
+
+.velvet-card {
+  background: linear-gradient(145deg, #2D1427 0%, #1A0A16 100%);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  box-shadow: 0 20px 45px -15px rgba(20, 8, 18, 0.5);
+}
+
+/* Haute Couture Hover Underline */
+.hover-gold-link {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+.hover-gold-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #C5A059, #F4E8D0);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-gold-link:hover::after {
+  width: 100%;
+}
+
+/* Sensual Satin Glow */
+.satin-glow {
+  position: relative;
+  overflow: hidden;
+}
+.satin-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(197, 160, 89, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Haute Editorial Spacing & Line Height Utilities */
+.leading-editorial {
+  line-height: 1.85 !important;
+}
+
+.leading-airy {
+  line-height: 1.95 !important;
+}
+
+.tracking-airy {
+  letter-spacing: 0.025em !important;
+}
+
+.tracking-subheading {
+  letter-spacing: 0.32em !important;
+}
+
+.tracking-banner {
+  letter-spacing: 0.38em !important;
+}
+
